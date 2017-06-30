@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" td align="center">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Persons or Faces</title>
+	<script type="text/javascript" src="face_rec.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<style type="text/css">
+		p{font-size:15pt;}
+		button{height:30px;width: 70px;}
+		#detect_URL{font-size:10pt;height:50px;width:400px;}
+		#outcome_AI{font-size:11pt;height:80px;width:400px;}
+		#upPhoto{height:400px;width:400px;border-color: black;border-width: 2px;border-style: solid;margin: 0 auto; margin-top: 30px;}
+		img{
+			max-width: 400px;
+			myimg: expression(onload = function(){
+				this.style.width = (this.offsetWidth > 400)?"400px":"auto";
+				});
+			max-height: 400px;
+			myimg: expression(onload = function(){
+				this.style.height = (this.offsetWidth > 400)?"400px":"auto";
+				});
+		}
+		a{font-size: 15pt;}
+		textarea{font-size:10pt;height:20px;width:400px;}
+		.outcome{height:50px;}
+		button{height:35px;width:70px;}
+		p{font-size: 15pt;}
+	</style>
+</head>
+<body>
+	<div class="create_person">
+		<h1>Create a New Person</h1>
+		<p>Enter following forms to create a new Person</p>
+		<textarea type="text" id="newPName" placeholder="Name"></textarea><br><br>
+		<textarea type="text" id="newPUserData" placeholder="UserData"></textarea><br><br>
+		<textarea type="text" id="myGroupID" placeholder="Group ID"></textarea><br><br>
+		<button onclick="createPerson();">Go</button>
+		<h3>Outcome:</h3>
+		<textarea id="createdPeople" class="outcome"></textarea>
+	</div>
+	<div class="add_face">
+		<h1>Add a Face to a Person</h1>
+		<p>Enter following forms to add a new face</p>
+		<textarea type="text" id="add_face_PID" placeholder="Person ID"></textarea><br><br>
+		<textarea type="text" id="add_face_GID" placeholder="Group ID"></textarea><br><br>
+		<textarea type="text" id="add_face_URL" placeholder="Picture URL"></textarea><br><br>
+		<button onclick="addFace();">Go</button>
+		<h3>Outcome:</h3>
+		<textarea id="addedFace" class="outcome"></textarea>
+	</div>
+	<br><br><br>
+	
+</body>
+</html>
